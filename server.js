@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+require('dotenv').config()
+
+// Load port from .env, otherwise set to 3001 by default
+const port = process.env.PORT || 3001;
 
 // Temporarily load data
 // const response = require('./docs/response.json');
@@ -16,6 +20,6 @@ app.post('/ss', (req, res) => {
 
 });
 
-app.listen(3000, () => {
-	console.log('Server is running on port 3000');
+app.listen(port, () => {
+	console.log(`Server is running on port ${port}`);
 });
